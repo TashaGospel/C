@@ -1,10 +1,9 @@
 #include <iostream>
-#include <fstream>
-#include <limits>
 using namespace std;
-int n, a[100][100];
-
+char *a;
 int main()
 {
-	cout << char(5+48);
+	a = new char[][5];
+	cout << a[0];
+	cout << a[1];
 }

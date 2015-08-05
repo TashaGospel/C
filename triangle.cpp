@@ -27,3 +27,4 @@ int main()
 	for (int i=0; i<=2; i++) {p[i].input();}
 	cout << p[0].circum(p[1],p[2]);		
 } 
+

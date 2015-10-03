@@ -10,5 +10,5 @@ $(LINK_TARGET): $(OBJS)
 %.o: %.cpp
 	g++ -c $<
 
-clean: 
+clean:
 	rm *.o

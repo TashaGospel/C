@@ -17,13 +17,15 @@ void parseFile() {
 			cin >> dish >> disappointed;
 
 			if (disappointed && !(reachedZero)) {
-				if (a[1] - wildCards <= 0) { reachedZero = true; goto fail; }
-				int min = 1;
-				for (int z = 2; z <= k; z++) 
-					if (a[z] - wildCards <= 0) { reachedZero = true; goto fail; }
-					else if (a[min] > a[z]) min = z;
+				int min = (dish != 1) ? 1 : 2;
+				if (a[min] <= 0) { reachedZero = true; goto fail; }
+				for (int z = 1; z <= k; z++) 
+					if (a[z] <= 0) { reachedZero = true; goto fail; }
+					else if (a[min] > a[z] && z != dish) min = z;
+				int minVal = a[min];
+				for (int z = 1; z <= k; z++) if (z != dish && a[z] == minVal)
+					a[z] = 0;
 				wildCards -= a[min];
-				a[min] = 0;
 			}
 			fail:
 
